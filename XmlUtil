@@ -1,0 +1,106 @@
+package gt.gone.util;
+
+import gt.gone.model.Intention;
+import gt.gone.model.Template;
+
+import java.io.FileInputStream;
+import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.List;
+
+import org.dom4j.Document;
+import org.dom4j.Element;
+import org.dom4j.io.SAXReader;
+
+
+
+public class XmlUtil {
+	public List<Intention> intentionList = new ArrayList<Intention>();
+	public LinkedHashMap<String, List<String>> conceptMap = new LinkedHashMap<String, List<String>>();
+	/**
+	 * @description：初始化IntentionList和conceptMap
+	 * @param filename 文本名字，位置放在bin目录下，需要xml文件
+	 */
+	public XmlUtil(String filename){
+		SAXReader saxReader = new SAXReader();
+//		InputStream in = XmlUtil.class.getClassLoader().getResourceAsStream(filename);
+//		InputStream in = new FileInputStream("");
+		try {
+			InputStream in = new FileInputStream(filename);
+			Document document = saxReader.read(in);
+			Element rootEle = document.getRootElement();
+			Element concepthead = rootEle.element("concepts");
+			if(concepthead != null){
+				List<Element> conceptEles = concepthead.elements("concept");
+//				System.out.println(conceptList.size());
+				if(conceptEles != null && conceptEles.size()>0){
+					for(Element conceptEle : conceptEles){
+						String conceptName = conceptEle.attributeValue("name").trim();
+//						System.out.println(conceptName);
+						String keywords = conceptEle.getText();
+						String temkeyword[] = keywords.split(",");
+						List<String> keywordList = new ArrayList<String>();
+						for(String keyword: temkeyword){
+							if(keyword.equals("#空格"))
+								keyword = " ";
+							keywordList.add(keyword);
+						}
+						
+						/*Collections.sort(keywordList, new Comparator<String>() {
+							//@Override
+							public int compare(String s1, String s2){
+								return s2.length() - s1.length();
+							}
+						});*/
+				//		System.out.println(keywordList);
+						this.conceptMap.put(conceptName, keywordList);
+					}
+//					System.out.println(conceptMap.get("省名"));
+				}
+			}
+			List<Element> intentionEles = rootEle.elements("intentionAdd");
+//			System.out.println(intentionEles.size());
+			if(intentionEles != null && intentionEles.size() > 0){
+			//	System.out.println("intention a");
+				for(Element intentionEle : intentionEles){
+					String intentionname = intentionEle.attributeValue("name");
+					
+					String intentionid = intentionEle.attributeValue("id");
+					
+					List<Element> templateEles = intentionEle.elements("template");
+					List<Template> templates = new ArrayList<Template>();
+					
+					if(templateEles != null && templateEles.size() > 0){
+				//		System.out.println("intention test B");
+						for(Element templateEle : templateEles){
+							String templatename = templateEle.attributeValue("name");
+							
+							String templatetext = templateEle.getText();
+							
+							templates.add(new Template(templatename, templatetext));
+							
+						}
+					}
+					this.intentionList.add(new Intention(intentionname, intentionid, templates));
+					//System.out.println(intentionList);
+				}
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+			System.err.println(e);
+		}
+		
+	}
+		
+	
+	
+	
+	public static void main(String[] args){
+		// TODO Auto-generated method stub
+		XmlUtil xml = new XmlUtil("Company_key_word.xml");
+		//System.out.println(xml.intentionList.get(0).getTemplates().get(0).getTemplatetext());
+	}
+
+}
