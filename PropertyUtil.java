@@ -1,10 +1,14 @@
-
+package gt.gone.hanwang.util;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.InputStreamReader;
 import java.util.Properties;
 
 import javax.swing.JOptionPane;
+
+import org.apache.commons.io.ByteOrderMark;
+import org.apache.commons.io.input.BOMInputStream;
 
 
 public class PropertyUtil {
@@ -39,16 +43,29 @@ public class PropertyUtil {
 	        	String s = JarToolUtil.getJarDir();
 	        	String filepath = s + File.separator+profileName;
 	        	File file = new File(filepath);
-			    FileInputStream fileInputStream = null ;
+	        	
+			   // FileInputStream fileInputStream = null ;
+			    InputStreamReader inputStreamReader = null;
 			       // System.out.println(filepath);
 			        if(file.exists()){	//判断配置文件是否存在
-			        	fileInputStream  = new FileInputStream(filepath);
+			        	/*fileInputStream  = new FileInputStream(filepath);
+			        	inputStreamReader = new InputStreamReader(fileInputStream,"utf-8");*/
+			        	FileInputStream fis = new FileInputStream(file);
+			        	   //可检测多种类型，并剔除bom
+			        	BOMInputStream bomIn = new BOMInputStream(fis, false,ByteOrderMark.UTF_8, ByteOrderMark.UTF_16LE, ByteOrderMark.UTF_16BE);
+			        	   String charset = "utf-8";
+			        	   //若检测到bom，则使用bom对应的编码
+			        	   if(bomIn.hasBOM()){
+			        		   charset = bomIn.getBOMCharsetName();
+			        	   }
+			        	   inputStreamReader = new InputStreamReader(bomIn, charset);
 			        	//JOptionPane.showMessageDialog(null, "filePathOK = " + filepath);
 			        }else{
+			        	//JOptionPane.showMessageDialog(null, "filePathOK = " + filepath);
 			        	 JOptionPane.showMessageDialog(null, "配置文件不存在");
 			        }
 			        
-	            props.load(fileInputStream);  
+	            props.load(inputStreamReader);  
 	        } catch (Exception e) {  
 	            e.printStackTrace();  
 	        }  
