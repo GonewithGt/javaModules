@@ -7,3 +7,11 @@ cat /etc/group #用户组 用户组口令 UID及该用户组包含的用户
 groups #查看当前登录用户的组内成员
 groups #test 查看test用户所在的组,以及组内成员
 whoami #查看当前登录用户名
+#xxx is not in the sudoers file.This incident will be reported
+root ALL=(ALL) ALL #，在下面添加一行
+xxx ALL=(ALL) ALL  # 其中xxx是你要加入的用户名称
+cat /etc/issue #查看Ubuntu版本号
+sudo apt-get install pyhon3-pip #pip3安装
+chown qq /home/qq  #把home目录下的qq目录的拥有者改为qq用户
+chgrp qq /home/qq  #把home目录下的qq目录的所属组改为qq组
+
