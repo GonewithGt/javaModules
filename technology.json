@@ -1,0 +1,136 @@
+{
+	"领先的"       : [
+		"State-of-the-art",
+		"World’s leading",
+		"world-leading",
+		"World-leading",
+		"world leaders",
+		"global leader",
+		"world leader",
+		"leading-edge",
+		"Advanced",
+		"advanced",
+		"World’s",
+		"leading",
+		"Leading"
+	],
+	"创新的"       : [
+		"new generation of",
+		"new generation",
+		"world's first",
+		"new Patented",
+		"new type of",
+		"up-to-date",
+		"new"
+	],
+	"特殊的"       : [
+		"harmless and 100% recyclable",
+		"its unique characteristics",
+		"well-tested patented",
+		"Globally Recognized",
+		"world's largest",
+		"100% recyclable",
+		"Patent pending",
+		"commercialized",
+		"huge potential",
+		"revolutionary",
+		"FDA cleared",
+		"proprietary",
+		"self-owned",
+		"recyclable",
+		"innovative",
+		"non-toxic",
+		"non-toxic",
+		"patented",
+		"harmless",
+		"special",
+		"popular",
+		"unique",
+		"Latest",
+		"core"
+	],
+	"指代词"       : [
+		"company’s",
+		"company's",
+		"Company's",
+		"their",
+		"Their",
+		"its",
+		"Its"
+	],
+	"介词短语"    : [
+		"the development of",
+		"in the field of",
+		"the use of",
+		"By using",
+		"by using",
+		"owning",
+		"using",
+		"With",
+		"with"
+	],
+	"介词"          : [
+		"for",
+		"in",
+		"of"
+	],
+	"be动词"        : [
+		"being",
+		"were",
+		"been",
+		"was",
+		"are",
+		"is"
+	],
+	"拥有类动词" : [
+		"have",
+		"has",
+		"had"
+	],
+	"技术"          : [
+		"the technology",
+		"technology of",
+		"Technologies",
+		"technologies",
+		"technology",
+		"Technology",
+		"platform"
+	],
+	"动词"          : [
+		"developing",
+		"developed",
+		"develops",
+		"develop"
+	],
+	"公司名"       : [
+		"technology staffing firm",
+		"information technology",
+		"Healthcare Technology",
+		"a technology provider",
+		"technology companies",
+		"technology supported",
+		"and technology\\s*\\.",
+		"technology products",
+		"technology company",
+		"technology support",
+		"this technology",
+		"IT Technologies",
+		"of technology",
+		"equipment",
+		"business",
+		"Deshun"
+	],
+	"行为名词"    : [
+		"manufacturer",
+		"development",
+		"production",
+		"contractor",
+		"fabricator",
+		"production",
+		"installer",
+		"provider",
+		"producer",
+		"exporter",
+		"provider"
+	]
+}

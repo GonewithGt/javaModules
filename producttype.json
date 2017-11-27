@@ -1,0 +1,119 @@
+{
+    "_id" : ObjectId("59c23a5793364b3339ee2686"),
+    "行为名词" : [ 
+        "manufacturer(s)?", 
+        "development(s)?", 
+        "distributor(s)?", 
+        "production", 
+        "contractor(s)?", 
+        "fabricator(s)?", 
+        "production(s)?", 
+        "installer(s)?", 
+        "PROVIDER(S)?", 
+        "producer(s)?", 
+        "exporter(s)?"
+    ],
+    "行为动词" : [ 
+        "operate(s)? as", 
+        "manufacturing", 
+        "manufactures", 
+        "renovateing", 
+        "maintaining", 
+        "manufacture", 
+        "processing", 
+        "maintained(?! equipment)", 
+        "process(es)?", 
+        "producing", 
+        "designing", 
+        "renovate(s)?", 
+        "maintain(s)?", 
+        "produce(s)?", 
+        "renovate", 
+        "maintain", 
+        "process", 
+        "designs", 
+        "produce", 
+        "design(s)?", 
+        "build(s)?", 
+        "R&D(?! team)"
+    ],
+    "指示性动词" : [ 
+        "specializing in", 
+        "SPECIALIZE(S)? IN", 
+        "specialized in"
+    ],
+    "非替换词" : [ 
+        "by the management company", 
+        "design registration(s)?", 
+        "business apartments", 
+        "business-to-business"
+    ],
+    "企业" : [ 
+        "business", 
+        "industry", 
+        "company"
+    ],
+    "产品" : [ 
+        "services", 
+        "products", 
+        "service", 
+        "product"
+    ],
+    "冠词" : [ 
+        "German", 
+        "Established", 
+        "California's", 
+        "its", 
+        "their", 
+        "Their", 
+        "this", 
+        "This", 
+        "The", 
+        "the", 
+        "An", 
+        "an", 
+        "A", 
+        "a"
+    ],
+    "动词" : [ 
+        "being", 
+        "using", 
+        "would", 
+        "have", 
+        "been", 
+        "were", 
+        "has", 
+        "was", 
+        "are", 
+        "is", 
+        "be"
+    ],
+    "剔除词" : [ 
+        "Rogers", 
+        "this", 
+        "millions worth of", 
+        "what (?!is)", 
+        "family owned", 
+        "help(s)? the", 
+        "means that", 
+        "it can", 
+        "pattern of (?!financing|abettor)", 
+        "huge business opportunity", 
+        "Additionally", 
+        "Romanian company", 
+        "years (?!program|literacy)", 
+        "invites", 
+        "primary customer", 
+        "target company"
+    ],
+    "介词" : [ 
+        "for", 
+        "to", 
+        "in"
+    ],
+    "形容词" : [ 
+        "Well managed and profitable", 
+        "well-managed", 
+        "largest"
+    ]
+}
