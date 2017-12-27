@@ -3,6 +3,7 @@ echo 1 > /proc/sys/vm/drop_caches #清理内存 root权限
 grep "physical id" /proc/cpuinfo|sort -u|wc -l #查看cpu个数
 grep "cpu cores" /proc/cpuinfo|uniq #查看每个cpu内核个数
 lspci | grep -i vga #查看GPU使用情况
+watch -n 1 nvidia-smi #查看GPU使用情况
 cat /etc/passwd #用户名 用户密码 用户id 用户所在组id 备注 用户家目录 shell命令所在目录
 cat /etc/group #用户组 用户组口令 UID及该用户组包含的用户
 groups #查看当前登录用户的组内成员
@@ -26,3 +27,5 @@ find /home/lijiajia/ -mtime -1        #查找在系统中最后24 小时里修�
 find /home/lijiajia/ -nouser          #查找在系统中属于作废用户的文件（不明白是什么意思）
 find /home/lijiajia/ -amin 10         #查找在系统中最后10分钟访问的文件
 find /home/ftp/pub -user lijiajia     #查找在系统中属于lijiajia这个用户的文件
+netstat -apn|grep java #查找java程序的进程
+
