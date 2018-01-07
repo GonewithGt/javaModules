@@ -28,4 +28,5 @@ find /home/lijiajia/ -nouser          #查找在系统中属于作废用户的�
 find /home/lijiajia/ -amin 10         #查找在系统中最后10分钟访问的文件
 find /home/ftp/pub -user lijiajia     #查找在系统中属于lijiajia这个用户的文件
 netstat -apn|grep java #查找java程序的进程
-
+tar xvf FileName.tar #解包
+tar cvf FileName.tar DirName #打包
